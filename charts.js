@@ -97,7 +97,7 @@ function buildCharts(sample) {
   var barLayout = {
     title: "Top 10 Bacterial Cultures Found",
     xaxis: {title: "Sample Amounts"},
-    yaxis: {title: "Bacteria Name"},
+    yaxis: {title: "Bacteria Sample ID"},
   };
 
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
