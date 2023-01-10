@@ -69,7 +69,7 @@ function buildCharts(sample) {
     // Deliverable 1: 5. Create a variable that holds the first sample in the array.
   var sampleResult = samples[0];
     // Deliverable 3: 2. Create a variable that holds the first sample in the metadata array.
-  var result = resultArray[0]; 
+  var result = metadataFiltered[0]; 
     // Deliverable 1: 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
   var otu_ids = sampleResult.otu_ids;
   var otu_labels = sampleResult.otu_labels;
