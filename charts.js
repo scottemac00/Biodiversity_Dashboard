@@ -103,16 +103,55 @@ function buildCharts(sample) {
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
   Plotly.newPlot("bar", barData, barLayout);
     // Deliverable 2: 1. Create the trace for the bubble chart.
-
+  var bubtrace = [
+    {
+      x: otu_ids,
+      y: sample_values,
+      text: otu_labels,
+      mode: 'markers',
+      marker: {
+        color: otu_ids,
+        colorscale: 'Earth',
+        size: sample_values,
+      }
+    }
+  ];
     // Deliverable 2: 2. Create the layout for the bubble chart.
-
+  var bublayout = {
+    title: "Bacteria Cultures per Sample",
+    xaxis: {title: "OTU ID"},
+    hovermode: "closest",
+  };
     // Deliverable 2: 3. Use Plotly to plot the data with the layout.
-    
+  Plotly.newPlot("bubble", bubtrace, bublayout);  
     // Deliverable 3: 4. Create the trace for the gauge chart.
-    
+  var guagetrace = [
+    {
+      domain: {x:[0,1], y:[0,1]},
+      value: wfreq,
+      title: {text: "<b>Bellybutton Washing Frequency</b><br>Scrubs per Week"},
+      type: "indicator",
+      mode: "guage+number",
+      guage: {
+        axis: {range: [null, 10]},
+        steps: [
+          {range: [0,2], color: "red"},
+          {range: [2,4], color: "orange"},
+          {range: [4,6], color: "yellow"},
+          {range: [6,8], color: "green"},
+          {range: [8,10], color: "blue"},
+        ],
+        bar: {color: "indigo"}
+      }
+    }
+  ]  
     // Deliverable 3: 5. Create the layout for the gauge chart.
-
+  var guagelayout = {
+    width: 460,
+    height: 350,
+    margin: {t:0,b:0}
+  };
     // Deliverable 3: 6. Use Plotly to plot the gauge data and layout.
-
+  Plotly.newPlot("guage", guagetrace, guagelayout);
   });
 }
