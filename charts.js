@@ -63,7 +63,7 @@ function buildCharts(sample) {
     // Deliverable 1: 3. Create a variable that holds the samples array. 
   var samples = data.samples;
     // Deliverable 1: 4. Create a variable that filters the samples for the object with the desired sample number.
-  var samplesFiltered = samples.filter(sampleObj => sampleObj.id == sample);
+  var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
     // Deliverable 3: 1. Create a variable that filters the metadata array for the object with the desired sample number.
   var metadataFiltered = data.metadata.filter(sampleObj => sampleObj.id == sample);
     // Deliverable 1: 5. Create a variable that holds the first sample in the array.
@@ -125,26 +125,26 @@ function buildCharts(sample) {
     // Deliverable 2: 3. Use Plotly to plot the data with the layout.
   Plotly.newPlot("bubble", bubtrace, bublayout);  
     // Deliverable 3: 4. Create the trace for the gauge chart.
-  var guagetrace = [
+  var traceg = [
     {
-      domain: {x:[0,1], y:[0,1]},
-      value: wfreq,
-      title: {text: "<b>Bellybutton Washing Frequency</b><br>Scrubs per Week"},
+      domain: {x:[0,1],  y:[0,1]},
+      value: wash_freq,
+      title: {text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week"},
       type: "indicator",
-      mode: "guage+number",
-      guage: {
+      mode: "gauge+number",
+      gauge: {
         axis: {range: [null, 10]},
         steps: [
           {range: [0,2], color: "red"},
           {range: [2,4], color: "orange"},
           {range: [4,6], color: "yellow"},
           {range: [6,8], color: "green"},
-          {range: [8,10], color: "blue"},
+          {range: [8,10], color: "blue"}
         ],
         bar: {color: "indigo"}
       }
     }
-  ]  
+  ]
     // Deliverable 3: 5. Create the layout for the gauge chart.
   var guagelayout = {
     width: 460,
