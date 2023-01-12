@@ -97,7 +97,7 @@ function buildCharts(sample) {
 
     // Deliverable 1: 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: <b>"Top 10 Bacterial Cultures Found"</b>,
+      title: "Top 10 Bacterial Cultures Found",
       xaxis: {title: "Sample Amounts"},
       yaxis: {title: "Bacteria Sample ID"},
     };
@@ -121,7 +121,7 @@ function buildCharts(sample) {
 
     // Deliverable 2: 2. Create the layout for the bubble chart.
     var bublayout = {
-      title: <b>"Bacteria Cultures Per Sample"</b>,
+      title: "Bacteria Cultures Per Sample",
       xaxis: {title: "OTU ID"},
       hovermode: "closest",
       };
